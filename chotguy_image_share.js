@@ -1,23 +1,25 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+    var img_data = [
+        {
+            img_src: "CMS_Creative_164657191_Kingfisher.jpg",
+            img_alt: "Some birds flying."
+        },
+        {
+            img_src: "cute-german-shepherd-puppy-new-wide-wallpapers-in-hd-widescreen.jpg",
+            img_alt: "Some German Shephards."
+        },
+        {
+            img_src: "pugs.jpeg",
+            img_alt: "Some pugs."
+        }
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
+    ];
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
+    Template.images.helpers({images:img_data});
+
+    console.log("I am the client");
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+    console.log("I am the server");
 }

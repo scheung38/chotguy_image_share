@@ -10,8 +10,12 @@
 
 
 <template name="images">
-    <img src="CMS_Creative_164657191_Kingfisher.jpg" alt="">
-    
+    {{#each images}}
+
+    <img src="{{img_src}}" alt="{{img_alt}}">
+
+    {{/each}}
+
 </template>
 
 <template name="hello">
