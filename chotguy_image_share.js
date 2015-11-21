@@ -15,7 +15,15 @@ if (Meteor.isClient) {
 
     ];
 
-    Template.images.helpers({images:img_data});
+    Template.images_template.helpers({images:img_data});
+
+    Template.images_template.events({
+        'click .js-image': function (event) {
+            alert('hello!!');
+            console.log(event);
+            $(event.target).css("width", "50px");
+        }
+    });
 
     console.log("I am the client");
 }
